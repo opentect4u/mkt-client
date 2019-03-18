@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
+import { AuthGuard } from './auth/auth.guard';
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
@@ -45,15 +46,12 @@ export const routes: Routes = [
   },
   {
     path: '',
+    canActivate: [AuthGuard],
     component: DefaultLayoutComponent,
     data: {
       title: 'Home'
     },
     children: [
-      {
-        path: 'base',
-        loadChildren: './views/base/base.module#BaseModule'
-      },
       {
         path: 'buttons',
         loadChildren: './views/buttons/buttons.module#ButtonsModule'
