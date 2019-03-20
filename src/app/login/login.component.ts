@@ -30,8 +30,6 @@ export class LoginComponent implements OnInit {
       "password": this.password
     };
     
-    this.loginService.request(userDetails.user_id, userDetails);
-
     this.loginService.loginUser(userDetails).subscribe(data => {
 
       if(data.token != 'No Data Found'){
