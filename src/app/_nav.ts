@@ -27,13 +27,13 @@ export const navItems: NavData[] = [
     icon: 'icon-puzzle',
     children: [
       {
-        name: 'Items',
-        url: '/items/dashboard',
+        name: 'User Register',
+        url: '/signup',
         icon: 'icon-puzzle'
       },
       {
-        name: 'Courier Companies',
-        url: '/courier-company/dashboard',
+        name: 'Project Type',
+        url: '/project/type',
         icon: 'icon-puzzle'
       },
     ]
@@ -43,13 +43,13 @@ export const navItems: NavData[] = [
     name: 'Transaction'
   },
   {
-    name: 'Courier',
-    url: '/courier',
+    name: 'Order Status',
+    url: '/orders',
     icon: 'icon-puzzle',
     children: [
       {
-        name: 'Courier Out / In',
-        url: '/courier-service/form',
+        name: 'Order Details',
+        url: '/orders/details',
         icon: 'icon-puzzle'
       },
       {
