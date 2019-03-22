@@ -9,7 +9,6 @@ import { Observable } from 'rxjs/';
 export class CarrierService {
 
   uri:string = environment.apiUrl;
-  heraders   =  new HttpHeaders().set('content-type', 'application/json');
 
   constructor(private http: HttpClient) { }
 
