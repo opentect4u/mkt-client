@@ -52,6 +52,10 @@ export const routes: Routes = [
       {
         path: 'signup',
         loadChildren: './views/register-user/register-user.module#RegisterUserModule'
+      },
+      {
+        path: 'settings',
+        loadChildren: './views/settings/settings.module#SettingsModule'
       }
     ]
   },

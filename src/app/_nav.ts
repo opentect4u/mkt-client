@@ -32,8 +32,8 @@ export const navItems: NavData[] = [
         icon: 'icon-puzzle'
       },
       {
-        name: 'Project Type',
-        url: '/project/type',
+        name: 'Settings',
+        url: '/settings',
         icon: 'icon-puzzle'
       },
     ]

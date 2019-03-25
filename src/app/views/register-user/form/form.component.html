@@ -1,3 +1,97 @@
-<p>
-  form works!
-</p>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>User's Form</strong>
+        </div>
+        <div class="card-body">
+          
+          <form [formGroup]="fGroup" (ngSubmit)="submit()">
+
+              <div class="form-group row">
+
+                <label for="userid" class="col-sm-2 col-form-label">User Id:</label>
+
+                <div class="col-sm-6">
+
+                  <input type="text" 
+                          class="form-control"
+                          formControlName="userid"
+                          >
+                </div>
+
+                <div class="col-sm-4">
+                  <div style="color:red;" *ngIf="!fGroup.controls['userid'].valid && fGroup.controls['userid'].touched ">This Field id Required</div>
+                </div>
+              
+              </div>
+
+              <div class="form-group row">
+
+                <label for="name" class="col-sm-2 col-form-label">Name:</label>
+
+                <div class="col-sm-6">
+
+                  <input type="text" 
+                          class="form-control"
+                          formControlName="name"
+                          >
+                </div>
+
+                <div class="col-sm-4">
+                  
+                  <div style="color:red;" *ngIf="!fGroup.controls['name'].valid && fGroup.controls['name'].touched ">This Field id Required</div>
+                  <div style="color:red;" *ngIf="fGroup.controls.name.hasError('pattern') ">Characters Only</div>
+
+                </div>
+              
+              </div>
+
+              <div class="form-group row">
+
+                <label for="name" class="col-sm-2 col-form-label">Status:</label>
+
+                <div class="col-sm-6">
+
+                  <select formControlName="status" class="form-control">
+                    <option value="A">Active</option>
+                    <option value="I">Inactive</option>
+                  </select>
+
+                </div>
+
+                <div class="col-sm-4">
+                  <div style="color:red;" *ngIf="!fGroup.controls['status'].valid && fGroup.controls['status'].touched ">This Field id Required</div>
+                </div>
+              
+              </div>
+
+              <div class="form-group row">
+
+                <label for="name" class="col-sm-2 col-form-label">Password:</label>
+
+                <div class="col-sm-6">
+
+                  <select formControlName="password" class="form-control">
+                    <option value="R">Default Password(123)</option>
+                  </select>
+
+                </div>
+              
+              </div>
+
+              <div class="form-group row">
+                  <div class="col-sm-6">
+
+                    <button class="btn btn-primary" [disabled]="!fGroup.valid">Submit</button>
+                    
+                  </div>
+              </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
