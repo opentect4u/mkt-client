@@ -44,17 +44,12 @@ export const navItems: NavData[] = [
   },
   {
     name: 'Order Status',
-    url: '/orders',
+    url: '',
     icon: 'icon-puzzle',
     children: [
       {
         name: 'Order Details',
-        url: '/orders/details',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Courier Service',
-        url: '/courier-service/dashboard',
+        url: '/orders',
         icon: 'icon-puzzle'
       }
     ]
