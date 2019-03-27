@@ -11,48 +11,30 @@
 
               <div class="form-group row">
 
-                <label for="userid" class="col-sm-1 col-form-label">Project Name:</label>
+                <label for="prjectName" class="col-sm-2 col-form-label">Project Name:</label>
 
-                <div class="col-sm-5">
-
-                  <input type="text" 
-                          class="form-control"
-                          formControlName="userid"
-                          >
-                </div>
-
-                <label for="name" class="col-sm-1 col-form-label">Type:</label>
-
-                <div class="col-sm-5">
+                <div class="col-sm-4">
 
                   <input type="text" 
                           class="form-control"
-                          formControlName="name"
+                          formControlName="prjectName"
                           >
-                </div>
-              
-              </div>
-
-              <div class="form-group row">
-
-                <label for="name" class="col-sm-1 col-form-label">Soc Person:</label>
-
-                <div class="col-sm-5">
-
-                  <select formControlName="status" class="form-control">
-                    <option value="A">Active</option>
-                    <option value="I">Inactive</option>
-                  </select>
+                  <div style="color:red;" *ngIf="!fGroup.controls['prjectName'].valid && fGroup.controls['prjectName'].touched ">This Field id Required</div>
 
                 </div>
 
-                <label for="name" class="col-sm-1 col-form-label">Contact No:</label>
+                <label for="projectType" class="col-sm-2 col-form-label">Type:</label>
 
-                <div class="col-sm-5">
+                <div class="col-sm-4">
 
-                  <select formControlName="password" class="form-control">
-                    <option value="R">Default Password(123)</option>
+                  <select class="form-control"
+                          formControlName="projectType"
+                          >
+                    <option *ngFor="let type of dependencies.projectType" [value]="type.type_cd">{{type.type_desc}}</option>
+
                   </select>
+
+                  <div style="color:red;" *ngIf="!fGroup.controls['projectType'].valid && fGroup.controls['projectType'].touched ">This Field id Required</div>
 
                 </div>
               
@@ -60,13 +42,39 @@
 
               <div class="form-group row">
 
-                <label for="userid" class="col-sm-1 col-form-label">Designation:</label>
+                <label for="socPerson" class="col-sm-2 col-form-label">Society Person:</label>
 
-                <div class="col-sm-5">
+                <div class="col-sm-4">
 
                   <input type="text" 
                           class="form-control"
-                          formControlName="userid"
+                          formControlName="socPerson"
+                          >
+
+                </div>
+
+                <label for="contactNo" class="col-sm-2 col-form-label">Contact No:</label>
+
+                <div class="col-sm-4">
+
+                  <input type="text" 
+                         class="form-control"
+                         formControlName="contactNo"
+                         >
+
+                </div>
+              
+              </div>
+
+              <div class="form-group row">
+
+                <label for="designation" class="col-sm-2 col-form-label">Designation:</label>
+
+                <div class="col-sm-4">
+
+                  <input type="text" 
+                          class="form-control"
+                          formControlName="designation"
                           >
                 </div>
 
@@ -74,24 +82,24 @@
 
               <div class="form-group row">
 
-                <label for="name" class="col-sm-1 col-form-label">District:</label>
+                <label for="dist" class="col-sm-2 col-form-label">District:</label>
 
-                <div class="col-sm-5">
+                <div class="col-sm-4">
 
-                  <input type="text" 
-                          class="form-control"
-                          formControlName="name"
-                          >
-                </div>
-
-                <label for="name" class="col-sm-1 col-form-label">Block:</label>
-
-                <div class="col-sm-5">
-
-                  <select formControlName="status" class="form-control">
-                    <option value="A">Active</option>
-                    <option value="I">Inactive</option>
+                  <select formControlName="dist" class="form-control">
+                      <option *ngFor="let district of dependencies.dist" [value]="district.district_code">{{district.district_name}}</option>
                   </select>
+                  
+                  <div style="color:red;" *ngIf="!fGroup.controls['dist'].valid && fGroup.controls['dist'].touched ">This Field id Required</div>
+
+                </div>
+                
+                
+                <label for="block" class="col-sm-2 col-form-label">Block:</label>
+
+                <div class="col-sm-4">
+
+                  <input type="text" formControlName="block" class="form-control">
 
                 </div>
 
@@ -100,33 +108,40 @@
 
               <div class="form-group row">
 
-                <label for="name" class="col-sm-1 col-form-label">Order Date:</label>
+                <label for="orderDt" class="col-sm-2 col-form-label">Order Date:</label>
 
-                <div class="col-sm-5">
+                <div class="col-sm-4">
 
-                  <select formControlName="password" class="form-control">
-                    <option value="R">Default Password(123)</option>
-                  </select>
+                  <input type="date" 
+                         formControlName="orderDt" 
+                         class="form-control"
+                         >
+                  
+                  <div style="color:red;" *ngIf="!fGroup.controls['orderDt'].valid && fGroup.controls['orderDt'].touched ">This Field id Required</div>
 
                 </div>
 
-                <label for="userid" class="col-sm-1 col-form-label">Order Details:</label>
+                <label for="orderDetails" class="col-sm-2 col-form-label">Order Details:</label>
 
-                <div class="col-sm-5">
+                <div class="col-sm-4">
 
                   <input type="text" 
                           class="form-control"
-                          formControlName="userid"
+                          formControlName="orderDetails"
                           >
                 </div>
 
-                <label for="name" class="col-sm-1 col-form-label">Order value:</label>
+              </div>
 
-                <div class="col-sm-5">
+              <div class="form-group row">
+                
+                <label for="orderValue" class="col-sm-2 col-form-label">Order Value:</label>
+
+                <div class="col-sm-4">
 
                   <input type="text" 
                           class="form-control"
-                          formControlName="name"
+                          formControlName="orderValue"
                           >
                 </div>
               
@@ -134,31 +149,117 @@
 
               <div class="form-group row">
 
-                <label for="name" class="col-sm-1 col-form-label">Tax:</label>
+                <label for="tax" class="col-sm-2 col-form-label">Tax:</label>
 
-                <div class="col-sm-5">
+                <div class="col-sm-4">
 
-                  <select formControlName="status" class="form-control">
-                    <option value="A">Active</option>
-                    <option value="I">Inactive</option>
-                  </select>
-
+                  <input type="tax"
+                         formControlName="tax" 
+                         class="form-control"
+                         >
                 </div>
 
-                <label for="name" class="col-sm-1 col-form-label">Payment Terms:</label>
+                <label for="paymentTerms" class="col-sm-2 col-form-label">Payment Terms:</label>
 
-                <div class="col-sm-5">
+                <div class="col-sm-4">
 
-                  <select formControlName="password" class="form-control">
-                    <option value="R">Default Password(123)</option>
-                  </select>
+                  <input type="text"
+                         formControlName="paymentTerms" 
+                         class="form-control"
+                         >
 
                 </div>
               
               </div>
 
               <div class="form-group row">
-                  <div class="col-sm-5">
+
+                <label for="monthlyRental" class="col-sm-2 col-form-label">Monthly Rental:</label>
+
+                <div class="col-sm-4">
+
+                  <input type="text" 
+                         formControlName="monthlyRental" 
+                         class="form-control"
+                         >
+
+                </div>
+
+                <label for="paymentStatus" class="col-sm-2 col-form-label">Payment Status:</label>
+
+                <div class="col-sm-4">
+
+                  <input type="text"
+                         formControlName="paymentStatus" 
+                         class="form-control"
+                         >
+
+                </div>
+              
+              </div>
+
+              <div class="form-group row">
+
+                <label for="salePerson" class="col-sm-2 col-form-label">Sale Person:</label>
+
+                <div class="col-sm-4">
+
+                  <input type="text" 
+                         formControlName="salePerson" 
+                         class="form-control"
+                         >
+
+                </div>
+
+              </div>
+
+              <div class="form-group row">
+
+                <label for="installedBy" class="col-sm-2 col-form-label">Installed By:</label>
+
+                <div class="col-sm-4">
+
+                  <input type="text" 
+                         formControlName="installedBy"
+                         class="form-control"
+                         >
+
+                </div>
+
+                <label for="installationDate" class="col-sm-2 col-form-label">Installation Date:</label>
+
+                <div class="col-sm-4">
+
+                  <input type="text"
+                         formControlName="installationDate"
+                         class="form-control"
+                         >
+                </div>
+              
+              </div>
+
+              <div class="form-group row">
+
+                <label for="sssRemarks" class="col-sm-2 col-form-label">SSS Remarks:</label>
+
+                <div class="col-sm-4">
+
+                  <textarea formControlName="sssRemarks" class="form-control"></textarea>
+
+                </div>
+
+                <label for="customerRemarks" class="col-sm-2 col-form-label">Customer Remarks:</label>
+
+                <div class="col-sm-4">
+
+                  <textarea formControlName="customerRemarks" class="form-control"></textarea>
+
+                </div>
+              
+              </div>
+
+              <div class="form-group row">
+                  <div class="col-sm-4">
 
                     <button class="btn btn-primary" [disabled]="!fGroup.valid">Submit</button>
                     

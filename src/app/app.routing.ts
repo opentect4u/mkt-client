@@ -39,7 +39,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     component: DefaultLayoutComponent,
     data: {
       title: 'Home'
@@ -50,6 +50,7 @@ export const routes: Routes = [
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       },
       {
+        canActivate: [AuthGuard],
         path: 'signup',
         loadChildren: './views/register-user/register-user.module#RegisterUserModule'
       },

@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormComponent } from './form/form.component';
+import { DatePipe } from '@angular/common'
 
 @NgModule({
   declarations: [DashboardComponent, FormComponent],
@@ -13,6 +14,7 @@ import { FormComponent } from './form/form.component';
     OrdersRoutingModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers:[DatePipe]
 })
 export class OrdersModule { }
