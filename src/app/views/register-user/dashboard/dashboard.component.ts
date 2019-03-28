@@ -35,11 +35,15 @@ export class DashboardComponent implements OnInit {
         localStorage.removeItem('token');
         this.router.navigate(['/login']);
       }
-      for(let i = 0; i < this.users.length; i++){
-        if(this.users[i]['emp_id'] == empNo){
-          this.users[i]['user_status'] = (status == 'A')? 'I' : 'A';
-        }
-      }
+      let tmpIndx = this.users.findIndex(x=> x.emp_id === empNo);
+      this.users[tmpIndx]['user_status'] = (status == 'A')? 'I' : 'A';
+      // for(let i = 0; i < this.users.length; i++){
+        
+
+      //   // if(this.users[i]['emp_id'] == empNo){
+      //   //   this.users[i]['user_status'] = (status == 'A')? 'I' : 'A';
+      //   // }
+      // }
 
     });
 
