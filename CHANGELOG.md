@@ -1,5 +1,78 @@
 ## [angular](./README.md) version `changelog`
 
+###### `v2.4.5`
+- refactor(modals): add `@ViewChild` 
+- update: `@coreui/angular` to `^2.4.5`
+- update: `@coreui/coreui` to `^2.1.8`
+- update: `@angular/animations` to `^7.2.10`
+- update: `@angular/common` to `^7.2.10`
+- update: `@angular/compiler` to `^7.2.10`
+- update: `@angular/core` to `^7.2.10`
+- update: `@angular/forms` to `^7.2.10`
+- update: `@angular/http` to `^7.2.10`
+- update: `@angular/platform-browser` to `^7.2.10`
+- update: `@angular/platform-browser-dynamic` to `^7.2.10`
+- update: `@angular/router` to `^7.2.10`
+- update: `chart.js` to `^2.8.0`
+- update: `flag-icon-css` to `^3.3.0`
+- update: `@angular-devkit/build-angular` to `^0.13.6`
+- update: `@angular/cli` to `^7.3.6`
+- update: `@angular/compiler-cli` to `^7.2.10`
+- update: `@angular/language-service` to `^7.2.10`
+- update: `@types/jasmine` to `^3.3.12`
+- update: `@types/node` to `^11.11.4`
+- update: `karma` to `^4.0.1`
+- update: `ts-node` to `^8.0.3`
+- update: `tslint` to `^5.14.0`
+
+###### `v2.4.3`
+- update: `@coreui/angular` to `^2.4.3`
+- update: `@coreui/coreui` to `^2.1.7`
+- update: `@angular/animations` to `^7.2.6`
+- update: `@angular/common` to `^7.2.6`
+- update: `@angular/compiler` to `^7.2.6`
+- update: `@angular/core` to `^7.2.6`
+- update: `@angular/forms` to `^7.2.6`
+- update: `@angular/http` to `^7.2.6`
+- update: `@angular/platform-browser` to `^7.2.6`
+- update: `@angular/platform-browser-dynamic` to `^7.2.6`
+- update: `@angular/router` to `^7.2.6`
+- update: `@angular-devkit/build-angular` to `^0.13.3`
+- update: `@angular/cli` to `^7.3.3`
+- update: `@angular/compiler-cli` to `^7.2.6`
+- update: `@angular/language-service` to `^7.2.6`
+- update: `ngx-perfect-scrollbar` to `^7.2.1`
+
+###### `v2.4.0`
+- fix(sidebar): navItems reassignment bug #126, #42
+- refactor(default-layout): use `cui-breadcrumb` instead of deprecated `app-breadcrumb` (migrate when ready)
+- fix(polyfills.ts): ie issues add `core-js/es7/array` and `core-js/es7/object`
+- update: `@angular/animations` to `^7.2.5`
+- update: `@angular/common` to `^7.2.5`
+- update: `@angular/compiler` to `^7.2.5`
+- update: `@angular/core` to `^7.2.5`
+- update: `@angular/forms` to `^7.2.5`
+- update: `@angular/http` to `^7.2.5`
+- update: `@angular/platform-browser` to `^7.2.5`
+- update: `@angular/platform-browser-dynamic` to `^7.2.5`
+- update: `@angular/router` to `^7.2.5`
+- update: `@coreui/angular` to `^2.4.1`
+- update: `bootstrap` to `^4.3.1`
+- update: `core-js` to `^2.6.5`
+- update: `moment` to `^2.24.0`
+- update: `ngx-bootstrap` to `^3.2.0`
+- update: `rxjs` to `^6.4.0`
+- update: `tsickle` to `^0.34.3`
+- update: `zone.js` to `^0.8.29`
+- update: `@angular-devkit/build-angular` to `^0.13.2`
+- update: `@angular/cli` to `^7.3.2`
+- update: `@angular/compiler-cli` to `^7.2.5`
+- update: `@angular/language-service` to `^7.2.5`
+- update: `@types/jasmine` to `^3.3.9`
+- update: `@types/node` to `^10.12.26`
+- update: `karma` to `^4.0.0`
+- update: `karma-coverage-istanbul-reporter` to `^2.0.5`
+    
 ###### `v2.2.4`
 - refactor(colors): use 'DOCUMENT' of '@angular/common'
 - refactor(default-layout): use 'DOCUMENT' of '@angular/common' #133 - thanks @damingerdai 
