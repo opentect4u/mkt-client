@@ -13,15 +13,15 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   ){}
 
   canActivate(): boolean{
-    
-    if(this.services.parseJwt(localStorage.getItem('token')).user.user_type == 'A'){
-      return true;
+    if(this.services.isLogin()){
+      if(this.services.parseJwt(localStorage.getItem('token')).user.user_type == 'A'){
+        return true;
+      }
+      else{
+        this.router.navigate(['/login']);
+        return false;
+      }
     }
-    else{
-      this.router.navigate(['/login']);
-      return false;
-    }
-    
   }
 
   canActivateChild(): boolean{
