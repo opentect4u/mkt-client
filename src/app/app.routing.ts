@@ -50,8 +50,8 @@ export const routes: Routes = [
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       },
       {
-        canActivate: [AuthGuard],
         path: 'signup',
+        canActivate: [AuthGuard],
         loadChildren: './views/register-user/register-user.module#RegisterUserModule'
       },
       {

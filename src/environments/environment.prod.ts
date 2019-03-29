@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "http://courier.synergicportal.in/api"
+  apiUrl: "http://mkt.synergicportal.in/api"
 };

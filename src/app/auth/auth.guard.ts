@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   canActivate(): boolean{
     
-    if(this.services.parseJwt(localStorage.getItem('token')).user.user_type == 'A'){
+    if(this.services.isLogin() && this.services.parseJwt(localStorage.getItem('token')).user.user_type == 'A'){
       return true;
     }
     else{
