@@ -11,6 +11,7 @@ import { CarrierService } from '../../services/carrier.service'
 })
 export class DefaultLayoutComponent implements OnDestroy {
   public navItems: any;
+  userName: string;
   public sidebarMinimized = true;
   private changes: MutationObserver;
   public element: HTMLElement;
@@ -18,7 +19,8 @@ export class DefaultLayoutComponent implements OnDestroy {
               private services: CarrierService,
               @Inject(DOCUMENT) _document?: any
              ) {
-
+    
+    this.userName = this.services.parseJwt(localStorage.getItem('token')).user.user_name;
     this.changes = new MutationObserver((mutations) => {
       this.sidebarMinimized = _document.body.classList.contains('sidebar-minimized');
     });

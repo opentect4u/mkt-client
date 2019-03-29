@@ -37,7 +37,7 @@ export class FormComponent implements OnInit {
         orderDt: [null, Validators.required],
         orderDetails: [null],
         orderValue: [null],
-        tax: [null],
+        tax: ['Excluding Tax'],
         paymentTerms: [null],
         monthlyRental:[null],
         paymentStatus: [null],
