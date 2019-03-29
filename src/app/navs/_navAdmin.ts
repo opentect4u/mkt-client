@@ -11,7 +11,7 @@ export interface NavData {
   class?: string;
 }
 
-export const navItems: NavData[] = [
+export const navItemsAdmin: NavData[] = [
   {
     name: 'Dashboard',
     url: '/dashboard',
@@ -50,6 +50,11 @@ export const navItems: NavData[] = [
       {
         name: 'Order Details',
         url: '/orders',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'Reports',
+        url: '/reports',
         icon: 'icon-puzzle'
       }
     ]

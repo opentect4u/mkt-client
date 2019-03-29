@@ -1,18 +1,23 @@
 import { Component, OnDestroy, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { navItems } from './../../_nav';
+import { navItemsAdmin } from '../../navs/_navAdmin';
+import { navItemsEmployee } from '../../navs/_navEmployee';
 import { Router } from '@angular/router';
+import { CarrierService } from '../../services/carrier.service'
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './default-layout.component.html'
 })
 export class DefaultLayoutComponent implements OnDestroy {
-  public navItems = navItems;
+  public navItems: any;
   public sidebarMinimized = true;
   private changes: MutationObserver;
   public element: HTMLElement;
-  constructor(private router: Router, @Inject(DOCUMENT) _document?: any) {
+  constructor(private router: Router, 
+              private services: CarrierService,
+              @Inject(DOCUMENT) _document?: any
+             ) {
 
     this.changes = new MutationObserver((mutations) => {
       this.sidebarMinimized = _document.body.classList.contains('sidebar-minimized');
@@ -22,6 +27,12 @@ export class DefaultLayoutComponent implements OnDestroy {
       attributes: true,
       attributeFilter: ['class']
     });
+
+    if(this.services.parseJwt(localStorage.getItem('token')).user.user_type == 'A'){
+      this.navItems = navItemsAdmin;
+    }else{
+      this.navItems = navItemsEmployee;
+    }
   }
 
   ngOnDestroy(): void {

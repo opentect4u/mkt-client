@@ -1,0 +1,60 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body" style="overflow: auto">
+          <table class="table table-responsive-sm table-hover table-outline mb-0" style="width: 600%">
+            <thead class="thead-light">
+              <tr>
+                <th>Sl No</th>
+                <th>Customer Name</th>
+                <th>Type</th>
+                <th>Contact Person of Society</th>
+                <th>Contact No</th>
+                <th>Designation</th>
+                <th>District</th>
+                <th>Block</th>
+                <th>Order Date</th>
+                <th>Order Details</th>
+                <th>Order Value</th>
+                <th>Tax</th>
+                <th>Payment Terms</th>
+                <th>Current Payment Status</th>
+                <th>Proposed Installed Date</th>
+                <th>Sales Person</th>
+                <th>Installed By</th>
+                <th>Installation Date</th>
+                <th>SSS Remarks</th>
+                <th>Customer Remarks</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="details">
+              <tr *ngFor="let list of details; index as i;">
+                <td>{{i+1}}</td>
+                <td>{{list.project_name}}</td>
+                <td>{{list.project_type}}</td>
+                <td>{{list.contact_person}}</td>
+                <td>{{list.contact_no}}</td>
+                <td>{{list.designation}}</td>
+                <td>{{list.dist}}</td>
+                <td>{{list.block}}</td>
+                <td>{{list.order_dt | date:'dd-MM-yyyy'}}</td>
+                <td>{{list.order_dtls}}</td>
+                <td>{{list.order_value}}</td>
+                <td>{{list.tax}}</td>
+                <td>{{list.payment_terms}}</td>
+                <td>{{list.payment_status}}</td>
+                <td>{{list.proposed_instl_dt | date:'dd-MM-yyyy'}}</td>
+                <td>{{list.sales_person}}</td>
+                <td>{{list.installed_by}}</td>
+                <td>{{list.installation_dt | date:'dd-MM-yyyy'}}</td>
+                <td>{{list.sss_remarks}}</td>
+                <td>{{list.cust_remarks}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

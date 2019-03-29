@@ -3,28 +3,26 @@ import { CarrierService } from '../../../services/carrier.service'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-report',
+  templateUrl: './report.component.html',
+  styleUrls: ['./report.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class ReportComponent implements OnInit {
 
-  orders: object[];
-  
+  details: object[];
+
   constructor(private services: CarrierService,
-      private router: Router
-  ) { }
+              private router: Router
+    ) { }
 
   ngOnInit() {
 
-    this.services.request('get', 'orders').subscribe((res: any) => {
+    this.services.request('get', ['orders', 'report']).subscribe((res: any) => {
       if(res.token == false){
         localStorage.removeItem('token');
         this.router.navigate(['/login']);
       }
-
-      this.orders = res;
-
+      this.details = res;
     })
 
   }

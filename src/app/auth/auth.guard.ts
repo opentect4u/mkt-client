@@ -8,13 +8,13 @@ import { CarrierService } from '../services/carrier.service';
 export class AuthGuard implements CanActivate, CanActivateChild {
   
   constructor(
-    private logingService: CarrierService,
+    private services: CarrierService,
     private router: Router
   ){}
 
   canActivate(): boolean{
-
-    if(this.logingService.isLogin()){
+    
+    if(this.services.parseJwt(localStorage.getItem('token')).user.user_type == 'A'){
       return true;
     }
     else{
@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   canActivateChild(): boolean{
 
-    if(this.logingService.isLogin()){
+    if(this.services.isLogin()){
       return true;
     }
     else{

@@ -61,7 +61,11 @@
                          class="form-control"
                          formControlName="contactNo"
                          >
-
+                  
+                  <div style="color:red;" *ngIf="fGroup.controls.contactNo.hasError('pattern') ">Numbers Only</div>
+                  <div style="color:red;" *ngIf="fGroup.controls.contactNo.hasError('minlength') ">Min Lenght 10</div>
+                  <div style="color:red;" *ngIf="fGroup.controls.contactNo.hasError('maxlength') ">Max Lenght 10</div>
+         
                 </div>
               
               </div>
@@ -174,23 +178,23 @@
 
               <div class="form-group row">
 
-                <label for="monthlyRental" class="col-sm-2 col-form-label">Monthly Rental:</label>
-
-                <div class="col-sm-4">
-
-                  <input type="text" 
-                         formControlName="monthlyRental" 
-                         class="form-control"
-                         >
-
-                </div>
-
                 <label for="paymentStatus" class="col-sm-2 col-form-label">Payment Status:</label>
 
                 <div class="col-sm-4">
 
                   <input type="text"
                          formControlName="paymentStatus" 
+                         class="form-control"
+                         >
+
+                </div>
+
+                <label for="proposedInstlDt" class="col-sm-2 col-form-label">Prefered Installation Date:</label>
+
+                <div class="col-sm-4">
+
+                  <input type="date"
+                         formControlName="proposedInstlDt" 
                          class="form-control"
                          >
 
