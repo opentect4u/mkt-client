@@ -39,6 +39,7 @@ export class FormComponent implements OnInit {
         orderValue: [null],
         tax: [null],
         paymentTerms: [null],
+        monthlyRental:[null],
         paymentStatus: [null],
         proposedInstlDt:[null],
         salePerson: [null],
@@ -68,11 +69,12 @@ export class FormComponent implements OnInit {
             orderValue: res[0].order_value,
             tax: res[0].tax,
             paymentTerms: res[0].payment_terms,
+            monthlyRental: res[0].monthlyRental,
             paymentStatus: res[0].payment_status,
             proposedInstlDt: this.datePipe.transform(res[0].proposed_instl_dt, 'yyyy-MM-dd'),
             salePerson: res[0].sales_person,
             installedBy: res[0].installed_by,
-            installationDate: res[0].installation_dt,
+            installationDate: this.datePipe.transform(res[0].installation_dt, 'yyyy-MM-dd'),
             sssRemarks: res[0].sss_remarks,
             customerRemarks: res[0].cust_remarks
           });

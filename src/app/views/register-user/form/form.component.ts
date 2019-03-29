@@ -24,6 +24,7 @@ export class FormComponent implements OnInit {
           Validators.required, 
           Validators.pattern(/^[a-zA-Z ]*$/)
         ])],
+        userType: [null],
         password: [null]
     })
   }
@@ -42,6 +43,7 @@ export class FormComponent implements OnInit {
             userid: res[0].user_id,
             status: res[0].user_status,
             name: res[0].user_name,
+            userType: res[0].user_type,
             password: null
           });
   

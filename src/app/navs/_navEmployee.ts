@@ -18,41 +18,19 @@ export interface NavData {
       icon: 'icon-speedometer'
     },
     {
-      title: true,
-      name: 'Masters'
+      name: 'Change Password',
+      url: '/settings',
+      icon: 'icon-puzzle'
     },
     {
-      name: 'Administrator',
-      url: '/administrator',
-      icon: 'icon-puzzle',
-      children: [
-        {
-          name: 'Settings',
-          url: '/settings',
-          icon: 'icon-puzzle'
-        },
-      ]
+      name: 'Add or Edit Orders',
+      url: '/orders',
+      icon: 'icon-puzzle'
     },
     {
-      title: true,
-      name: 'Transaction'
-    },
-    {
-      name: 'Order Status',
-      url: '',
-      icon: 'icon-puzzle',
-      children: [
-        {
-          name: 'Order Details',
-          url: '/orders',
-          icon: 'icon-puzzle'
-        },
-        {
-          name: 'Reports',
-          url: '/reports',
-          icon: 'icon-puzzle'
-        }
-      ]
+      name: 'Reports',
+      url: '/reports',
+      icon: 'icon-puzzle'
     }
   ];
   
