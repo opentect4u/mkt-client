@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarrierService } from '../../../services/carrier.service'
 import { Router } from '@angular/router';
+import {ExcelService} from '../../../services/excel.service';
 
 @Component({
   selector: 'app-report',
@@ -12,7 +13,8 @@ export class ReportComponent implements OnInit {
   details: object[];
 
   constructor(private services: CarrierService,
-              private router: Router
+              private router: Router,
+              private excelService:ExcelService
     ) { }
 
   ngOnInit() {
@@ -25,6 +27,10 @@ export class ReportComponent implements OnInit {
       this.details = res;
     })
 
+  }
+
+  exportAsXLSX():void {
+    this.excelService.exportAsExcelFile(this.details, 'feedback_sheet');
   }
 
 }
