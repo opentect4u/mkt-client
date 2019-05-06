@@ -44,6 +44,7 @@ export class FormComponent implements OnInit {
         proposedInstlDt:[null],
         installedBy: [null],
         installationDate: [null],
+        onlineDate: [null],
         sssRemarks: [null],
         customerRemarks: [null],
     })
@@ -73,6 +74,7 @@ export class FormComponent implements OnInit {
             proposedInstlDt: this.datePipe.transform(res[0].proposed_instl_dt, 'yyyy-MM-dd'),
             installedBy: res[0].installed_by,
             installationDate: this.datePipe.transform(res[0].installation_dt, 'yyyy-MM-dd'),
+            onlineDate: this.datePipe.transform(res[0].online_dt, 'yyyy-MM-dd'),
             sssRemarks: res[0].sss_remarks,
             customerRemarks: res[0].cust_remarks
           });
